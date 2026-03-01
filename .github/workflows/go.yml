@@ -20,7 +20,19 @@ jobs:
       uses: actions/setup-go@v6
       with:
         go-version-file: 'go.mod'
-
+    - name: Revive Action
+      # You may pin to the exact commit or the version.
+      # uses: morphy2k/revive-action@bd8016177e3722fe0aad85e22507805641be5bb1
+      uses: morphy2k/revive-action@v2.7.8
+      with:
+        # Path of the Revive config file
+        config: # optional
+        # Revive exclude patterns, separated by newline
+        exclude: # optional
+        # Revive path pattern
+        path: # optional
+        # Fail on any issue. Overrides the error and warning code in config
+        fail-on-any: # optional        
     - name: Build
       run: go build -v ./...
 
